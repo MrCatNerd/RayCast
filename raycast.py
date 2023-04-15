@@ -30,13 +30,13 @@ class RayCast:
         self.walls.append(Wall(0, HEIGHT, 0, 0, (255, 0, 0, 255)))
 
         # adding random walls
-        for i in range(5):
+        for _ in range(5):
             x1 = random.randint(0, WIDTH)
             x2 = random.randint(0, WIDTH)
 
             y1 = random.randint(0, HEIGHT)
             y2 = random.randint(0, HEIGHT)
-            self.walls.append(Wall(x1, y1, x2, y2))
+            self.walls.append(Wall(x1, y1, x2, y2, (0, 255, 255, 255)))
 
         self.particle = Particle(pygame.Vector2(500, 500))
 
@@ -59,8 +59,7 @@ class RayCast:
 
             self.particle.update(mx, my)
 
-            if SHOW_RAYS:
-                self.particle.look(self.walls, self.app)
+            self.particle.look(self.walls, self.app)
 
             for event in pygame.event.get():
                 if event.type == pygame.QUIT:

@@ -4,11 +4,7 @@ import pygame
 import math
 
 from ray import Ray
-from settings import (
-    SHOW_PARTICLE_CIRCLE,
-    PARTICLE_CIRCLE_RADIUS,
-    SHOW_RAY_DIRECTION,
-)
+from settings import *
 
 pygame.init()
 
@@ -37,8 +33,12 @@ class Particle:
                         closest = pt
 
             if closest:
-
-                pygame.draw.line(window, (255, 255, 255, 255), self.position, closest)
+                if SHOW_RAYS:
+                    pygame.draw.line(
+                        window, (255, 255, 255, 255), self.position, closest
+                    )
+                if SHOW_INTERESECTION_POINTS:
+                    pygame.draw.circle(window, (255, 0, 0, 255), closest, 7)
 
     def update(self, mx, my):
         self.position.x = mx
