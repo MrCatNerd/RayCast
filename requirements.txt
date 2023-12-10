@@ -1,2 +1,2 @@
-Pygame
-Python 3.10.7
+pygame-ce
+numpy
