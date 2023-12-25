@@ -1,7 +1,6 @@
 __author__ = "Alon B.R."
 
 import pygame
-import numpy as np
 import math
 
 from settings import RAY_DIRECTION_LENGTH_MULTIPLIER, RAY_DIRECTION_THICKNESS
@@ -23,10 +22,10 @@ class Ray:
         self.direction.y = y - self.position.y
 
         try:
-            # self.direction = self.direction.normalize()
-            div = float(
-                np.linalg.norm((self.direction.x, self.direction.y))
-            )  # i do it because its more accurate (in a fue)
+            div = (
+                self.direction and self.direction.normalize()
+            )  # in case its the vector is zero
+
             self.direction.x /= div
             self.direction.y /= div
         except ZeroDivisionError:
