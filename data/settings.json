@@ -1,5 +1,4 @@
 {
-    "title":"Ray Cast by Alon B.R.",
     "width":1000,
     "height":1000,
     "bg color": [0, 0, 0],
@@ -9,5 +8,6 @@
     "show ray direction": false,
     "ray direction thickness": 2,
     "ray direction length multiplier": 100,
-    "show intersection points": true
+    "show intersection points": true,
+    "title": "Ray Casting"
 }

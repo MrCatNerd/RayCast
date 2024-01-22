@@ -1,5 +1,3 @@
-__author__ = "Alon B.R."
-
 import json
 
 from os.path import join as join_path

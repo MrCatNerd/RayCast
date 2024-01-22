@@ -1,5 +1,3 @@
-__author__ = "Alon B.R."
-
 import pygame
 import sys
 import random
@@ -47,13 +45,10 @@ class RayCast:
 
     def play(self) -> None:
         while self.run:
-
-            pygame.display.set_caption(
-                f"RayCast by Alon B.R. {round(self.clock.get_fps(),2)} FPS"
-            )
-
             mx, my = pygame.mouse.get_pos()
             self.app.fill(BG_COLOR)
+
+            pygame.display.set_caption(f"{TITLE} {round(self.clock.get_fps(), 2)}")
 
             self.draw()
 

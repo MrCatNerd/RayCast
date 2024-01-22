@@ -1,5 +1,3 @@
-__author__ = "__Alon B.R."
-
 import pygame
 
 pygame.init()
